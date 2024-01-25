@@ -1,6 +1,7 @@
 import { useCallback, useRef, useState } from "react";
 import QUESTIONS from "../Questions";
 import Question from "./Question";
+import Summary from "./Summary";
 export default function Quiz() {
   const [userAnswers, setUserAnswers] = useState([]);
   const activeQuestionIndex = userAnswers.length;
@@ -13,7 +14,7 @@ export default function Quiz() {
 
   const handleSkipAnswer = useCallback(() => handleClick(null), [handleClick]);
   if (quizComplete) {
-    return;
+    return <Summary userAnswers={userAnswers}/>;
   }
 
   return (

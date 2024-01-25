@@ -5,7 +5,7 @@ export default function QuestionTimer({ timeout, onTimeout, mode }) {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      onTimeout();
+      onTimeout;
     }, timeout);
 
     return () => {
